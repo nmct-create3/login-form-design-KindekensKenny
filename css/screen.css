@@ -36,7 +36,15 @@
     --global-color-neutral-xx-dark: #4B4C60;
     --global-color-neutral-xxx-dark: #35374D;
     --global-color-neutral-xxxx-dark: #20223A;
-    
+    --global-baseline: 8px; 
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 0.5); /* = 4px */
+    --global-whitespace-sm: var(--global-baseline); /* = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /* = 16px */
+    --global-whitespace-lg: alc(var(--global-baseline) * 4); /* = 32px */   
+    --global-whitespace-xl: calc(var(--global-whitespace-md) * 2); /* = 48px */    
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* = 64px */    
 }
 
 /* CSS variables here */
@@ -271,19 +279,19 @@ label, input {
 }
 
 .o-section + .o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
     .o-section--lg + .o-section--lg,
     .o-section--xl + .o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-xl);
     }
 }
 
 @media (min-width: 992px) {
     .o-section--xl + .o-section--xl {
-        padding-top: 72px;
+        padding-top: var(--global-whitespace-xxl);
     }
 }
 
